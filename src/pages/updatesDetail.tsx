@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { formatDate } from "../utils/common";
 import { client } from "../utils/client";
-import { newsDetailQuery, newsDetailMoreQuery } from "../utils/data";
+import { newsDetailQuery } from "../utils/data";
 import { NewDetailsInfo } from "../utils/interface";
 import { BlockText } from "../components/blockContent";
 

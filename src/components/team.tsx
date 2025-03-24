@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TeamInfo } from '../utils/interface';
 import { client } from '../utils/client';
 import { teamQuery } from '../utils/data';
