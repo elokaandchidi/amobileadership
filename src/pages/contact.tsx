@@ -8,13 +8,13 @@ import Navbar from "../components/navbar";
 import { EMAIL_REGEX } from "../utils/regex";
 
 
-interface ContactDocument {
-  _type: string;
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
+// interface ContactDocument {
+//   _type: string;
+//   name: string;
+//   email: string;
+//   phone: string;
+//   message: string;
+// }
 
 const Contact = () => {
   const { addAlert } = useAlert();
@@ -50,13 +50,13 @@ const Contact = () => {
     }
     
     
-    let doc: ContactDocument = {
-      _type: 'contact',
-      name,
-      email,
-      phone,
-      message
-    };  
+    // let doc: ContactDocument = {
+    //   _type: 'contact',
+    //   name,
+    //   email,
+    //   phone,
+    //   message
+    // };  
     
   };
 
