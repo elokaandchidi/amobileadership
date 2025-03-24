@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import "tailwindcss";
+
+html{
+    scroll-behavior: smooth;
+}
+  
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+  
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body {
+    color: #11181F;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.font-EB {
+    font-family: "EB Garamond", serif;
+}
+
+.font-nunito {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.banner-home {
+    background-image: linear-gradient(black, black), url('./assets/images/banner-home.jpg');
+    background-size: cover;
+    background-clip: initial;
+    background-blend-mode: saturation;
+}
+
+.banner2-home {
+    background-image: url('./assets/images/banner-home2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-clip: initial;
+    /* background-blend-mode: saturation; */
+}
