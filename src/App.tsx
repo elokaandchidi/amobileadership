@@ -1,14 +1,25 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 
 // import './App.css'
 import Alert from './utils/notification/alert'
 import { AlertProvider } from './utils/notification/alertcontext'
-import { About, Contact, Essay, Home, News, NewsDetail, NotFound} from './pages/_route'
+import { About, BackgroundHistory, Contact, Donate, Enroll, Essay, Home, News, NewsDetail, NotFound, PrizeComponent, WinnersAndParticipants} from './pages/_route'
 import Footer from './components/footer'
 import Navbar from './components/navbar'
+import { useEffect } from 'react'
 
 function App() {
+  const { pathname } = useLocation();
 
+  
+  
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log("window", window);
+      console.log(pathname);
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
   return (
     <div className={`flex flex-col items-center w-full overflow-auto h-screen `}>
       <Navbar/>
@@ -21,6 +32,11 @@ function App() {
           <Route path="/news-updates/:id" element={<NewsDetail/>} />
           <Route path="/news-updates" element={<News/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/winnersAndParticipants" element={<WinnersAndParticipants/>} />
+          <Route path="/enroll" element={<Enroll/>} />
+          <Route path="/prize" element={<PrizeComponent/>} />
+          <Route path="/donate" element={<Donate/>} />
+          <Route path="/background-and-history" element={<BackgroundHistory/>} />
           {/* <Route path="/services" element={<Services/>} />
           <Route path="/services/:id" element={<ServiceDetail/>} /> */}
           <Route path="/*" element={<NotFound/>} />

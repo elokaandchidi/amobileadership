@@ -41,6 +41,16 @@ body {
     font-family: "Nunito Sans", sans-serif;
 }
 
+.bg-img-1 {
+    background-image: url('./assets/images/bg-img-1.png');
+    background-size: cover;
+    /* background-clip: initial; */
+}
+
+.bg-img-2 {
+    background-image: url('./assets/images/bg-img-2.png');
+}
+
 .banner-home {
     background-image: linear-gradient(black, black), url('./assets/images/banner-home.jpg');
     background-size: cover;

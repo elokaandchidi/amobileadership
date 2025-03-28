@@ -19,7 +19,7 @@ const TeamsComponent = () => {
         // eslint-disable-next-line
     }, []);
     return (
-        <div className="flex flex-col w-full gap-5">
+        <div className="flex flex-col w-11/12 lg:w-11/12 xl:w-8/12 gap-5">
           <div className="font-EB text-[2rem] font-semibold">Our Team</div>
           {teamList?.map((member, index) => (
             <div key={index} className={` grid md:grid-cols-2 items-center mt-5 w-full gap-10 border-b pb-5`}>

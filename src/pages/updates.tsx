@@ -103,7 +103,7 @@ const News = () => {
   }
   
   return (
-    <div className='flex flex-col items-center gap-10 lg:w-8/12 w-11/12'>
+    <div className='flex flex-col items-center gap-10 w-11/12 lg:w-11/12 xl:w-8/12'>
       <div className="w-full text-left md:text-[3rem] text-3xl md:mt-4 mt-10 font-semibold">News & Updates</div>
       <div className='flex flex-col w-full'>
         <div className='bg-white border p-3 md:mt-5 text-sm flex flex-row items-center md:w-1/3 text-center'>

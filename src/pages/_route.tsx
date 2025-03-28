@@ -1,7 +1,12 @@
 export { default as Home } from './index';
 export { default as About } from './about';
+export { default as Enroll } from './enroll';
+export { default as Donate } from './donate';
 export { default as Essay } from './essay';
 export { default as News } from './updates';
+export { default as BackgroundHistory } from './history';
+export { default as PrizeComponent } from './prize';
 export { default as NewsDetail } from './updatesDetail';
 export { default as Contact } from './contact';
+export { default as WinnersAndParticipants } from './winnersAndParticipants';
 export { default as NotFound } from './notFound';

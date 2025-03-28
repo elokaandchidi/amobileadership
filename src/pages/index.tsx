@@ -4,13 +4,14 @@ import BlockContent from '@sanity/block-content-to-react';
 
 import { config } from "../utils/config";
 import { client } from "../utils/client";
-import { NewInfo } from "../utils/interface";
-import { newsDetailMoreQuery } from "../utils/data";
+import { NewInfo, PrizeWinnerInfo } from "../utils/interface";
+import { newsDetailMoreQuery, winnersTop3Query } from "../utils/data";
 
 import StepFlow from "../components/stepFlow";
 import TeamsComponent from "../components/team";
 import ImageGallery from "../components/imageGallery";
 
+import noImg from "../assets/images/no-image.jpg"
 
 import prizeImg from "../assets/images/home-prize.png"
 import missionImg from "../assets/images/home-mission.webp"
@@ -34,11 +35,28 @@ import institutionsImg from "../assets/images/home-institutions.webp"
 import sponsorsImg from "../assets/images/home-sponsors.webp"
 import schoolsImg from "../assets/images/home-school.webp"
 import libraryImg from "../assets/images/home-library.png"
+import { NavLink } from "react-router-dom";
 
 
 
 const Home = () => {
   const [newsList, setNewsList] = useState<NewInfo[]>([]);
+
+  const [winnerList, setWinnerList] = useState<PrizeWinnerInfo[]>([]);
+  
+  const fetchParticipants = () =>{
+      // setLoading(true);
+      client.fetch(winnersTop3Query())
+      .then((data) => {
+      setWinnerList(data);
+      // setLoading(false);
+      })
+  }
+
+  useEffect(() => {
+      fetchParticipants();
+      // eslint-disable-next-line
+  }, []);
   
   const formatImage = (value: string) =>{    
     return value?.replace(/image-/g, "").replace(/-png/g, ".png").replace(/-svg/g, ".svg");
@@ -81,71 +99,71 @@ const Home = () => {
     <div className='flex flex-col items-center md:gap-[5rem] gap-10 w-full'>
       <div className='banner-home bg-cover flex flex-col items-center w-full'>
         <div className='w-full flex flex-col justify-center items-center bg-[#1f223d]/84 lg:py-[15rem] py-[7rem] h-full'>
-          <div className='flex flex-col lg:gap-10 gap-8 lg:w-8/12 w-11/12 items-center text-white'>
+          <div className='flex flex-col lg:gap-10 gap-8 w-11/12 lg:w-11/12 xl:w-8/12 items-center text-white'>
             <div className="font-EB text-center text-[3rem] font-semibold">Empower Minds, Ignite Change: <br/>Fuel Education</div>
             <div className="font-nunito text-center w-1/2">We are a charity organization dedicated to driving education, academic excellence, entrepreneurship and workplace skills through our impactful essay competition program. Join us today!</div>
             <div className="flex flex-row gap-5 justify-center items-center font-EB font-medium">
-              <div className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
+              <NavLink to="/enroll" target="_blank" className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
                 ENROLL
-              </div>
-              <div className="p-3 px-5 rounded-sm text-center text-[#1f223d] bg-white">
+              </NavLink>
+              <NavLink to="donate" className="p-3 px-5 rounded-sm text-center text-[#1f223d] bg-white">
                 DONATE
-              </div>
+              </NavLink>
             </div>
           </div>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 lg:w-8/12 w-11/12 text-sm">
+      <div className="grid md:grid-cols-2 w-11/12 lg:w-11/12 xl:w-8/12 text-sm">
         <div className="grid grid-cols-2 bg-[#7a57d1]">
           <div className="flex flex-col justify-around gap-5 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">Our Mission</div>
             <div className="leading-relaxed md:text-sm text-xs">Our Mission is to inspire creative thinking and prepare individuals for the future, utimately making a postive impact on their communities</div>
-            <span className="uppercase border rounded-sm py-3 lg:w-1/2 text-center font-EB text-xs">Read More</span>
+            <NavLink to="/about" className="uppercase border rounded-sm py-3 lg:w-1/2 text-center font-EB text-xs">Read More</NavLink>
           </div>
           <img src={missionImg} alt="missionImg" className="aspect-4/5 h-full object-cover"/>
         </div>
         <div className="grid grid-cols-2 bg-[#c50c66]">
-          <div className="flex flex-col justify-around gap-5 p-7 text-white">
+          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">The Essay Competition</div>
             <div className="leading-relaxed md:text-sm text-xs">The AEP competition is open to anyone who wants to participate and gain new skills</div>
-            <span className="uppercase border rounded-sm py-3 lg:w-1/2 text-center font-EB text-xs">How it works</span>
+            <NavLink to="/amobi-essay-prize" className="uppercase border rounded-sm py-3 lg:w-3/4 xl:w-1/2 text-center font-EB text-xs">How it works</NavLink>
           </div>
           <img src={competitionImg} alt="competitionImg" className="aspect-4/5 h-full object-cover"/>
         </div>
         <div className="grid grid-cols-2 bg-[#f17811]">
           <img src={prizeImg} alt="prizeImg" className="aspect-4/5 h-full object-cover"/>
-          <div className="flex flex-col justify-around gap-5 p-7 text-white">
+          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">Prizes to be Won</div>
             <div className="leading-relaxed md:text-sm text-xs">Every completing student will be entitled to a recommendation letter to any academic or works institutions globally</div>
-            <span className="uppercase border rounded-sm py-3 lg:w-1/2 text-center font-EB text-xs">Read More</span>
+            <NavLink to="/prize" className="uppercase border rounded-sm py-3 lg:w-1/2 text-center font-EB text-xs">Read More</NavLink>
           </div>
         </div>
         <div className="grid grid-cols-2 bg-[#141f40]">
           <img src={participateImg} alt="participateImg" className="aspect-4/5 h-full object-cover"/>
-          <div className="flex flex-col justify-around gap-5 p-7 text-white">
+          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">How to Participate</div>
             <div className="leading-relaxed md:text-sm text-xs">You can participate as a parent, student and even sponsor. Scroll to find out more.</div>
-            <span className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">Find Out More</span>
+            <NavLink to="/enroll" className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">Find Out More</NavLink>
           </div>
         </div>
         <div className="grid grid-cols-2 bg-[#1c923d]/80">
-          <div className="flex flex-col justify-around gap-5 p-7 text-white">
+          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">Donate</div>
             <div className="leading-relaxed md:text-sm text-xs">There are many ways to get involved. if you would like to, please contact us through our social media channels or just DONATE</div>
-            <span className="uppercase border rounded-sm py-3 lg:w-3/4 text-center font-EB text-xs">Give to our cause</span>
+            <NavLink to="/donate" className="uppercase border rounded-sm py-3 lg:w-3/4 text-center font-EB text-xs">Give to our cause</NavLink>
           </div>
           <img src={donationsImg} alt="donationsImg" className="aspect-4/5 h-full object-cover"/>
         </div>
         <div className="grid grid-cols-2 bg-[#b8935c]/90">
-          <div className="flex flex-col justify-around gap-5 p-7 text-white">
+          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">Past Winners</div>
             <div className="leading-relaxed md:text-sm text-xs">Our winners can testify to how AEP has equipped them with life changing skills</div>
-            <span className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">See all winners</span>
+            <NavLink to="/winnersAndParticipants" className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">See all winners</NavLink>
           </div>
           <img src={winnerImg} alt="winnerImg" className="aspect-4/5 h-full object-cover"/>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-5 items-center lg:w-8/12 w-11/12 text-sm">
+      <div className="grid md:grid-cols-2 gap-5 items-center w-11/12 lg:w-11/12 xl:w-8/12 text-sm">
         <div className="font-EB font-semibold md:text-[3rem] text-4xl">Our Mission</div>
         <div className="flex flex-col gap-7 opacity-80">
           <div>
@@ -159,7 +177,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 lg:w-8/12 w-11/12 text-sm">
+      <div className="grid md:grid-cols-2 w-11/12 lg:w-11/12 xl:w-8/12 text-sm">
         <div className="grid grid-cols-2 bg-[#e54926]">
           <div className="flex flex-col gap-5 md:p-7 p-4 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">Objective 1</div>
@@ -196,7 +214,7 @@ const Home = () => {
           <img src={objective5Img} alt="objectiveImg" className="aspect-square h-full object-cover"/>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-10 items-center lg:w-8/12 w-11/12 text-sm">
+      <div className="grid md:grid-cols-2 gap-10 items-center w-11/12 lg:w-11/12 xl:w-8/12 text-sm">
         <div className="flex flex-col gap-7">
           <div className="font-EB font-semibold md:text-[3rem] text-4xl w-full leading-tight">Essay Competition Mechanics</div>
           <div className="opacity-80">
@@ -213,7 +231,7 @@ const Home = () => {
         <img src={mechanicsImg} alt="mechanicsImg" className="aspect-square object-cover "/>
       </div>
       <StepFlow/>
-      <div className="flex flex-col gap-2 items-center text-sm lg:w-8/12 w-11/12">
+      <div className="flex flex-col gap-2 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
         <div className="font-EB font-semibold text-[2rem] leading-tight">Prizes and Awards</div>
         <div className="opacity-80 font-nunito mt-5">
           Prizes will be given for the top 3 nationally 
@@ -270,7 +288,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-2 items-center text-sm lg:w-8/12 w-11/12">
+      <div className="flex flex-col gap-2 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
         <div className="font-EB font-semibold text-[2rem] leading-tight">How to Participate</div>
         <div className="opacity-80 font-nunito mt-5">
           Listed below are the ways you can participate in The AEP Competition.  Read the section that applies to you and complete the form. 
@@ -284,35 +302,35 @@ const Home = () => {
               Fill in the form and send us your details
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <div className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enroll'} state={{ type: 'student' }} target="_blank" className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
-              </div>
+              </NavLink>
             </div>
           </div>
-          <div className="flex flex-col gap-7 md:order-3 order-4">
+          <div  className="flex flex-col gap-7 md:order-3 order-4">
             <div className="font-EB font-bold text-2xl leading-tight">Parent</div>
             <div className="opacity-80">
-              Read “How it works” and understand the benefits to your child and their future<br />
-              Complete registration and pay fee<br />
+              Read “<NavLink to='/amobi-essay-prize' className="underline">How it works</NavLink>” and understand the benefits to your child and their future<br />
+              Complete registration and pay fee <br/>
               Receive course materials, timelines and other supporting information.  Start the learning!!
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <div className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enroll'} state={{ type: 'parent' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
-              </div>
+              </NavLink>
             </div>
           </div>
           <img src={parentsImg} alt="parentsImg" className="aspect-square object-cover md:order-4 order-3"/>
           <img src={institutionsImg} alt="institutionsImg" className="aspect-square object-cover order-5"/>
           <div className="flex flex-col gap-7 order-6">
             <div className="font-EB font-bold text-2xl leading-tight">Educational Institutions</div>
-            <div className="opacity-80">
-            Read “How it works” and understand the benefits for your students, your institution and yourself.
+            <div className="opacity-80 text-sm">
+              Read “<NavLink to='/amobi-essay-prize' className="underline">How it works</NavLink>” and understand the benefits for your students, your institution and yourself.
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <div className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enroll'} state={{ type: 'institutions' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
-              </div>
+              </NavLink>
             </div>
           </div>
           <div className="flex flex-col gap-7 md:order-7 order-8">
@@ -321,24 +339,24 @@ const Home = () => {
               There are many ways to get involved.  Let us know your thoughts.
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <div className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enroll'} state={{ type: 'sponsors' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
-              </div>
+              </NavLink>
             </div>
           </div>
           <img src={sponsorsImg} alt="sponsorsImg" className="aspect-square object-cover md:order-8 order-7"/>
         </div>
       </div>
-      <div className="flex flex-col gap-2 items-center text-sm lg:w-8/12 w-11/12">
+      <div className="flex flex-col gap-2 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
         <div className="font-EB font-semibold text-[2rem] leading-tight">Donate or Get Involved</div>
         <div className="opacity-80 font-nunito mt-5 text-center">
           There are many ways to get involved. If you would like to, please contact us.
         </div>
       </div>
-      <div className="flex flex-col gap-5 items-center text-sm lg:w-8/12 w-11/12">
+      <div className="flex flex-col gap-5 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
         <div className="font-EB font-semibold text-[2rem] leading-tight">Our History</div>
         <div className="opacity-80 font-nunito mt-5 text-center md:w-2/4 leading-6">
-          The Amobi Royal family history can be traced to Ogidi, Anambra State, Nigeria; and the family has always strived to further education as a catalyst for good leadership in the community. Read more.
+          The Amobi Royal family history can be traced to Ogidi, Anambra State, Nigeria; and the family has always strived to further education as a catalyst for good leadership in the community. <NavLink to="/background-and-history" className="text-blue-400">Read more</NavLink>.
         </div>
         <div className="grid md:grid-cols-4 grid-cols-2 font-EB w-full">
           <img src={libraryImg} alt="libraryImg" className="lg:aspect-[3/4] aspect-square h-full object-cover"/>
@@ -354,32 +372,52 @@ const Home = () => {
             <div className="font-nunito mt-2 leading-6 lg:text-sm text-xs">The 3th Edition of the Amobi Essay Prize was held in Queen's College, Lagos (Girls school).</div>
           </div>
         </div>
-        <div className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-semibold">
+        <NavLink to="/background-and-history" className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-semibold">
           Read More
-        </div>
+        </NavLink>
       </div>
-      <div className="flex flex-col gap-5 items-center text-sm lg:w-8/12 w-11/12">
+      <div className="flex flex-col gap-5 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
         <div className="font-EB font-semibold text-[2rem] leading-tight">Participants & Previous Winners</div>
         <div className="grid md:grid-cols-3 grid-cols-2 gap-7 font-EB w-full">
-          <div className="flex flex-col w-full justify-between gap-2 lg:p-7 p-4 border border-gray-300 rounded-sm">
-            <img src={libraryImg} alt="libraryImg" className="aspect-square h-full object-cover rounded-full"/>
-            <div className=" font-bold lg:text-lg text-sm mt-3">Jedidiah Isreal</div>
-            <div className="flex flex-row font-nunito font-semibold italic text-[#b8935c] justify-between items-center gap-3">
-              <div className="">Igbogbi College (Boys)</div>
-              <div className="">2023</div>
+          {winnerList?.map((winner, index) => (
+            <div key={index} className="flex flex-col w-full max-w-4xl mx-auto justify-between items-center gap-7 lg:py-10 p-4 border border-gray-200 rounded-lg">
+              <div 
+                className={`${index % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} flex flex-col items-center justify-center w-full h-[15rem] bg-cover bg-center bg-no-repeat`}
+                style={{
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center center'
+                }}
+              >
+                <img 
+                  src={winner?.imageUrl || noImg} 
+                  alt="winner" 
+                  className="object-cover relative w-3/5 rounded-full aspect-square shadow-lg"
+                />
+              </div>
+
+              <div className="w-full px-2 space-y-4">
+                <h2 className="font-bold text-lg lg:text-xl text-gray-800 truncate">
+                  {winner?.name}
+                </h2>
+                <div className="flex flex-row font-nunito font-semibold italic text-[#b8935c] justify-between items-center gap-3">
+                  <div className="">{winner?.school}</div>
+                  <div className="">{winner?.year}</div>
+                </div>
+                <div className="mt-3 w-full">
+                  <span className="inline-block bg-[#141f3f] px-4 py-2 text-xs lg:text-sm text-white shadow-sm">
+                    {winner?.position}
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="mt-5">
-              <span className="bg-[#141f3f] px-3 py-2 lg:text-sm text-xs text-white">Winner</span>
-            </div>
-          </div>
+          ))}
         </div>
-        <div className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-semibold">
+        <NavLink to="/winnersAndParticipants" className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-semibold">
           All Participants
-        </div>
+        </NavLink>
       </div>
-      {/* <WinnersComponent /> */}
       <ImageGallery/>
-      <div className="flex flex-col lg:w-8/12 w-11/12 gap-5">
+      <div className="flex flex-col w-11/12 lg:w-11/12 xl:w-8/12 gap-5">
         <div className="text-[2rem] font-semibold">News & Updates</div>
         <div className="grid md:grid-cols-3 w-full gap-10">
           {newsList.length > 0 && newsList?.map((post) => (
@@ -421,9 +459,9 @@ const Home = () => {
       <TeamsComponent />
       <div className="w-full flex flex-col justify-center gap-3 items-center bg-[#1f223d] text-white py-[7rem]">
         <div className="font-EB text-center text-[2rem] font-semibold">Want to Get Involved?</div>
-        <div className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-medium">
+        <a href="https://www.instagram.com/amobifoundation?igshid=MzMyNGUyNmU2YQ%3D%3D" target="_blank" className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-medium">
           Contact us
-        </div>
+        </a>
       </div>
     </div>
   )

@@ -11,8 +11,8 @@ const Navbar = () => {
 
   return (
     <div className='flex flex-col items-center w-full relative shadow-sm'>
-      <div className='flex flex-row justify-between items-center md:w-8/12 w-11/12 lg:py-5 py-3'>
-        <NavLink className='flex flex-row gap-4 items-center md:w-auto w-2/3'  to='/'>
+      <div className='flex flex-row justify-between items-center w-11/12 lg:w-11/12 xl:w-8/12 lg:py-5 py-3'>
+        <NavLink className='flex flex-row gap-4 items-center md:w-auto w-2/3 outline-0'  to='/'>
           <img src={logo} alt='logo' className='lg:h-20 h-12'/>
           <span className='font-bold'>Amobi Education Foundation</span>
         </NavLink>
@@ -25,7 +25,7 @@ const Navbar = () => {
               <NavLink to='/amobi-essay-prize' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
                 Amobi Essay Prize
               </NavLink>
-              <NavLink to='/services' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
+              <NavLink to='/winnersAndParticipants' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
                 Winners and Participants
               </NavLink>
               <NavLink to='/news-updates' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
@@ -56,7 +56,7 @@ const Navbar = () => {
               <NavLink className={({ isActive }) => (isActive ? 'font-semibold' : '')} onClick={() => SetShowMenu(false)} to='/amobi-essay-prize'>
                 Amobi Essay Prize
               </NavLink>
-              <NavLink className={({ isActive }) => (isActive ? 'font-semibold' : '')} onClick={() => SetShowMenu(false)} to='/services'>
+              <NavLink className={({ isActive }) => (isActive ? 'font-semibold' : '')} onClick={() => SetShowMenu(false)} to='/winnersAndParticipants'>
                 Winners and Participants
               </NavLink>
               <NavLink className={({ isActive }) => (isActive ? 'font-semibold' : '')} onClick={() => SetShowMenu(false)} to='/news-updates'>

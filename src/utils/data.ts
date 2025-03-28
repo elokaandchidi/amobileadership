@@ -5,34 +5,42 @@ type searchParams = {
   searchTerm?: string,
 }
 
-export const professionalDetailQuery = (professionalId: string) => {
-  const query = `*[_type == "professional" && name == '${professionalId}']{
+export const participantsQuery = () => {  
+  const query = `*[_type == "participant"] | order(_createdAt desc){
     _id,
-    name,
     title,
-    body,
-    mainImageUrl,
-    typeOf,
-    role,
-    education,
-    experience,
-    _createdAt
+    "schools" : school[] {
+      name,
+      "imageUrl": image.asset->url
+    }
   }`;
   return query;
 };
 
-export const professionalListQuery = (type: string) => {  
-  const query = `*[_type == "professional" && typeOf == '${type}' ]{
+export const winnersTop3Query = () => {  
+  const query = `*[_type == "winner"] | order(_updatedAt desc)[0...2] {
+    year,
+    prizewinner[] {
+      name,
+      school,
+      position,
+      "year": ^.year, // Reference the year at the parent level
+      "imageUrl": image.asset->url
+    }
+  }.prizewinner[]`;
+  return query;
+};
+
+export const winnersQuery = () => {  
+  const query = `*[_type == "winner"] | order(_createdAt desc){
     _id,
-    name,
-    title,
-    body,
-    mainImageUrl,
-    typeOf,
-    role,
-    education,
-    experience,
-    _createdAt
+    year,
+    "prizewinners" : prizewinner[] {
+      name,
+      school,
+      position,
+      "imageUrl": image.asset->url
+    }
   }`;
   return query;
 };
@@ -103,7 +111,6 @@ export const newsDetailMoreQuery = (id: string) => {
     return query;
   }
 };
-
 
 export const newsQuery = ({page, pageSize}: searchParams) => {  
   const prev = (page - 1) * pageSize;

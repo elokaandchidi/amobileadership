@@ -28,8 +28,8 @@ const StepCard = ({ step, isLeft }: { step: { id: number; title: string; text: s
         <>
           <div className="w-1/2 flex justify-end">
             <div className="w-full bg-orange-500 text-white p-5 shadow-lg text-center">
-              <h2 className="font-bold text-lg font-EB">{step.title}</h2>
-              <p className="mt-4 text-sm">{step.text}</p>
+              <h2 className="font-bold text-lg lg:text-2xl font-EB">{step.title}</h2>
+              <p className="mt-4 text-sm lg:text-lg">{step.text}</p>
             </div>
           </div>
           <div className="w-1/2"></div>
@@ -51,11 +51,13 @@ const StepCard = ({ step, isLeft }: { step: { id: number; title: string; text: s
 
 export default function StepsComponent() {
   return (
-    <div className="relative w-full">
-      <div className="font-EB font-semibold md:text-4xl text-3xl w-full leading-tight mb-5">How it Works</div>
-      {steps.map((step, index) => (
-        <StepCard key={step.id} step={step} isLeft={index % 2 === 0} />
-      ))}
+    <div className="relative flex flex-col gap-10 w-full w-11/12 lg:w-11/12 xl:w-8/12">
+      <div className="font-EB font-semibold md:text-4xl text-center text-3xl w-full leading-tight">How it Works</div>
+      <div>
+        {steps.map((step, index) => (
+          <StepCard key={step.id} step={step} isLeft={index % 2 === 0} />
+        ))}
+      </div>
     </div>
   );
 }
