@@ -26,7 +26,6 @@ import studentsImg from "../assets/images/home-students.webp";
 import parentsImg from "../assets/images/home-parents.webp"
 import institutionsImg from "../assets/images/home-institutions.webp"
 import sponsorsImg from "../assets/images/home-sponsors.webp"
-import schoolsImg from "../assets/images/home-school.webp"
 
 export const EnrollMessage = {
   STUDENT: {

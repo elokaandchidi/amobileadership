@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import InputField from "../components/Input/input"
+import InputField from "../components/input"
 import TextareaField from "../components/textarea";
 import SelectField from "../components/select";
 
@@ -12,6 +12,9 @@ const Donate = () => {
   const otherDetailRef = useRef<HTMLTextAreaElement>(null);
   const [selected, setSelected] = useState('')
 
+  console.log('====================================');
+  console.log(selected);
+  console.log('====================================');
   const optionList = ['Search Engine', 'Social Media', 'TV', 'Radio', 'Friend or Family'];
   
   return (

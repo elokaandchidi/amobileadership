@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { useLocation } from "react-router-dom";
 import parse from 'html-react-parser';
 
-import InputField from "../components/Input/input"
+import InputField from "../components/input"
 import TextareaField from "../components/textarea";
 import SelectField from "../components/select";
 
@@ -17,6 +17,10 @@ const Enroll = () => {
   const [selected, setSelected] = useState('')
   const [messageMap, setMessageMap] = useState({} as any)
   const enrolleeType = location?.state?.type;
+
+  console.log('====================================');
+  console.log(selected);
+  console.log('====================================');
 
   useEffect(() => {
     if (enrolleeType) {
