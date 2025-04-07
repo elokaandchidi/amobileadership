@@ -25,7 +25,7 @@ const NewsDetail = () => {
 
 
   return (
-    <div className='flex flex-col items-center mt-10 lg:gap-[5rem] gap-10 w-11/12 lg:w-11/12 xl:w-8/12'>
+    <div className='flex flex-col items-center mt-10 lg:gap-[5rem] gap-10 w-11/12 lg:w-11/12 xl:w-8/12 mb-24 lg:mb-50'>
       <div className='flex flex-col items-center w-full'>
         <NavLink to={'/news-updates'} className='text-sm underline hover:no-underline flex flex-row items-center bg-blue-50 p-2 rounded-lg'>
           News

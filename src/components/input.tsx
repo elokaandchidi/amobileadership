@@ -17,7 +17,7 @@ const InputField = forwardRef<HTMLInputElement, InputProps>(
             type={type}
             readOnly= {readonly}
             ref={ref} // Attach the ref here
-            className="outline-none px-2 bg-transparent text-primary w-full"
+            className="outline-none px-2 bg-transparent w-full"
           />
         </div>
       </div>

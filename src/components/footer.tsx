@@ -6,7 +6,7 @@ import { FaInstagram } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
-    <div className='flex flex-col items-center w-full lg:py-10 py-5'>
+    <div className='flex flex-col items-center w-full lg:py-10 py-5 shadow-2xl'>
       <div className='flex flex-col lg:w-9/12 w-11/12 justify-center items-center'>
         <NavLink className='' to='/'>
           <img src={logo} alt='logo' className='h-50'/>

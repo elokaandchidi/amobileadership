@@ -100,8 +100,8 @@ const Home = () => {
       <div className='banner-home bg-cover flex flex-col items-center w-full'>
         <div className='w-full flex flex-col justify-center items-center bg-[#1f223d]/84 lg:py-[15rem] py-[7rem] h-full'>
           <div className='flex flex-col lg:gap-10 gap-8 w-11/12 lg:w-11/12 xl:w-8/12 items-center text-white'>
-            <div className="font-EB text-center text-[3rem] font-semibold">Empower Minds, Ignite Change: <br/>Fuel Education</div>
-            <div className="font-nunito text-center w-1/2">We are a charity organization dedicated to driving education, academic excellence, entrepreneurship and workplace skills through our impactful essay competition program. Join us today!</div>
+            <div className="font-EB text-center text-4xl lg:text-[3rem] font-semibold">Empower Minds, Ignite Change: <br/>Fuel Education</div>
+            <div className="font-nunito text-center lg:w-1/2">We are a charity organization dedicated to driving education, academic excellence, entrepreneurship and workplace skills through our impactful essay competition program. Join us today!</div>
             <div className="flex flex-row gap-5 justify-center items-center font-EB font-medium">
               <NavLink to="/enroll" target="_blank" className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
                 ENROLL
@@ -123,16 +123,16 @@ const Home = () => {
           <img src={missionImg} alt="missionImg" className="aspect-4/5 h-full object-cover"/>
         </div>
         <div className="grid grid-cols-2 bg-[#c50c66]">
-          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
+          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white order-2 md:order-1">
             <div className="font-EB font-semibold md:text-lg text-sm">The Essay Competition</div>
             <div className="leading-relaxed md:text-sm text-xs">The AEP competition is open to anyone who wants to participate and gain new skills</div>
             <NavLink to="/amobi-essay-prize" className="uppercase border rounded-sm py-3 lg:w-3/4 xl:w-1/2 text-center font-EB text-xs">How it works</NavLink>
           </div>
-          <img src={competitionImg} alt="competitionImg" className="aspect-4/5 h-full object-cover"/>
+          <img src={competitionImg} alt="competitionImg" className="aspect-4/5 h-full object-cover order-1 md:order-2"/>
         </div>
         <div className="grid grid-cols-2 bg-[#f17811]">
-          <img src={prizeImg} alt="prizeImg" className="aspect-4/5 h-full object-cover"/>
-          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
+          <img src={prizeImg} alt="prizeImg" className="aspect-4/5 h-full object-cover order-2 md:order-1"/>
+          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white order-1 md:order-2">
             <div className="font-EB font-semibold md:text-lg text-sm">Prizes to be Won</div>
             <div className="leading-relaxed md:text-sm text-xs">Every completing student will be entitled to a recommendation letter to any academic or works institutions globally</div>
             <NavLink to="/prize" className="uppercase border rounded-sm py-3 lg:w-1/2 text-center font-EB text-xs">Read More</NavLink>
@@ -155,12 +155,12 @@ const Home = () => {
           <img src={donationsImg} alt="donationsImg" className="aspect-4/5 h-full object-cover"/>
         </div>
         <div className="grid grid-cols-2 bg-[#b8935c]/90">
-          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
+          <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white order-2 md:order-1">
             <div className="font-EB font-semibold md:text-lg text-sm">Past Winners</div>
             <div className="leading-relaxed md:text-sm text-xs">Our winners can testify to how AEP has equipped them with life changing skills</div>
             <NavLink to="/winnersAndParticipants" className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">See all winners</NavLink>
           </div>
-          <img src={winnerImg} alt="winnerImg" className="aspect-4/5 h-full object-cover"/>
+          <img src={winnerImg} alt="winnerImg" className="aspect-4/5 h-full object-cover order-1 md:order-2"/>
         </div>
       </div>
       <div className="grid md:grid-cols-2 gap-5 items-center w-11/12 lg:w-11/12 xl:w-8/12 text-sm">
@@ -186,15 +186,15 @@ const Home = () => {
           <img src={objective1Img} alt="objectiveImg" className="aspect-square h-full object-cover"/>
         </div>
         <div className="grid grid-cols-2 bg-[#f17811]">
-          <div className="flex flex-col gap-5 md:p-7 p-4 text-white">
+          <div className="flex flex-col gap-5 md:p-7 p-4 text-white order-2 md:order-1">
             <div className="font-EB font-semibold md:text-lg text-sm">Objective 2</div>
             <div className="leading-relaxed md:text-sm text-xs">Attract investment and opportunities to our community through academic programs</div>
           </div>
-          <img src={objective2Img} alt="objectiveImg" className="aspect-square h-full object-cover"/>
+          <img src={objective2Img} alt="objectiveImg" className="aspect-square h-full object-cover order-1 md:order-2"/>
         </div>
         <div className="grid grid-cols-2 bg-[#1f73d4]">
-          <img src={objective3Img} alt="objectiveImg" className="aspect-square h-full object-cover"/>
-          <div className="flex flex-col gap-5 md:p-7 p-4 text-white">
+          <img src={objective3Img} alt="objectiveImg" className="aspect-square h-full object-cover order-2 md:order-1"/>
+          <div className="flex flex-col gap-5 md:p-7 p-4 text-white order-1 md:order-2">
             <div className="font-EB font-semibold md:text-lg text-sm">Objective 3</div>
             <div className="leading-relaxed md:text-sm text-xs">Nurture the next generation of leaders through collaboration with parents, students, teachers, and institutions</div>
           </div>
@@ -230,7 +230,9 @@ const Home = () => {
         </div>
         <img src={mechanicsImg} alt="mechanicsImg" className="aspect-square object-cover "/>
       </div>
-      <StepFlow/>
+      <div className="w-11/12 lg:w-11/12 xl:w-8/12 flex flex-col items-center">
+        <StepFlow/>
+      </div>
       <div className="flex flex-col gap-2 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
         <div className="font-EB font-semibold text-[2rem] leading-tight">Prizes and Awards</div>
         <div className="opacity-80 font-nunito mt-5">
@@ -264,10 +266,10 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <img src={nationalsImg} alt="nationalsImg" className="aspect-square h-full object-cover"/>
+            <img src={nationalsImg} alt="nationalsImg" className="aspect-16/9 h-full object-cover"/>
           </div>
           <div className="grid grid-cols-2 bg-[#c50c66]">
-            <img src={regionalsImg} alt="regionalsImg" className="aspect-square h-full object-cover"/>
+            <img src={regionalsImg} alt="regionalsImg" className="aspect-16/9 h-full object-cover"/>
             <div className="flex flex-col gap-5 p-7 text-white">
               <div className=" font-semibold text-lg">Regionals</div>
               <div className="flex flex-col gap-1 w-full">
@@ -377,12 +379,12 @@ const Home = () => {
         </NavLink>
       </div>
       <div className="flex flex-col gap-5 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
-        <div className="font-EB font-semibold text-[2rem] leading-tight">Participants & Previous Winners</div>
-        <div className="grid md:grid-cols-3 grid-cols-2 gap-7 font-EB w-full">
+        <div className="font-EB font-semibold text-[2rem] leading-tight text-center">Participants & Previous Winners</div>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 font-EB w-full">
           {winnerList?.map((winner, index) => (
             <div key={index} className="flex flex-col w-full max-w-4xl mx-auto justify-between items-center gap-7 lg:py-10 p-4 border border-gray-200 rounded-lg">
               <div 
-                className={`${index % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} flex flex-col items-center justify-center w-full h-[15rem] bg-cover bg-center bg-no-repeat`}
+                className={`${index % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} flex flex-col relative items-center justify-center w-full h-[15rem] bg-cover bg-center bg-no-repeat`}
                 style={{
                   backgroundSize: 'contain',
                   backgroundPosition: 'center center'
@@ -456,8 +458,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <TeamsComponent />
-      <div className="w-full flex flex-col justify-center gap-3 items-center bg-[#1f223d] text-white py-[7rem]">
+      <div className="w-11/12 lg:w-11/12 xl:w-8/12 flex flex-col items-center">
+        <TeamsComponent />
+      </div>
+      <div className="w-full flex flex-col justify-center gap-3 items-center bg-[#1f223d] text-white py-[7rem] mb-24 lg:mb-50">
         <div className="font-EB text-center text-[2rem] font-semibold">Want to Get Involved?</div>
         <a href="https://www.instagram.com/amobifoundation?igshid=MzMyNGUyNmU2YQ%3D%3D" target="_blank" className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-medium">
           Contact us

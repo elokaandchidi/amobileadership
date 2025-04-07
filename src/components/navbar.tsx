@@ -12,13 +12,13 @@ const Navbar = () => {
   return (
     <div className='flex flex-col items-center w-full relative shadow-sm'>
       <div className='flex flex-row justify-between items-center w-11/12 lg:w-11/12 xl:w-8/12 lg:py-5 py-3'>
-        <NavLink className='flex flex-row gap-4 items-center md:w-auto w-2/3 outline-0'  to='/'>
-          <img src={logo} alt='logo' className='lg:h-20 h-12'/>
-          <span className='font-bold'>Amobi Education Foundation</span>
+        <NavLink className='flex flex-row gap-4 items-center md:w-auto w-3/4 outline-0'  to='/'>
+          <img src={logo} alt='logo' className='lg:h-30 h-24'/>
+          <span className='font-bold text-lg'>Amobi Education Foundation</span>
         </NavLink>
         <div className="hidden lg:block">
           <div className={`flex flex-col text-lg justify-end`}>
-            <div className={`tracking-wide flex flex-row flex-wrap justify-end w-full gap-3 text-sm items-center`}>
+            <div className={`tracking-wide flex flex-row flex-wrap justify-end w-full gap-5 text-lg items-center`}>
               <NavLink to='/about' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
                 About Us
               </NavLink>
@@ -45,7 +45,7 @@ const Navbar = () => {
           <div className='flex flex-col w-full relative bg-white p-5'>
             <div className='flex flex-row items-center justify-between w-full  border-b border-gray-200'>
               <NavLink to='/'>
-                <img src={logo} alt='logo' className='h-16'/>
+                <img src={logo} alt='logo' className='h-24'/>
               </NavLink>
               <FaRegCircleXmark size={24} onClick={() => SetShowMenu(false)} className='cursor-pointer'/>
             </div>

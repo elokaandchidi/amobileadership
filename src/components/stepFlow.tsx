@@ -39,8 +39,8 @@ const StepCard = ({ step, isLeft }: { step: { id: number; title: string; text: s
           <div className="w-1/2"></div>
           <div className="w-1/2 flex justify-start">
             <div className="w-full bg-orange-500 text-white text-center p-5 shadow-lg">
-              <h2 className="text-lg font-bold font-EB">{step.title}</h2>
-              <p className="mt-4 text-sm">{step.text}</p>
+              <h2 className="text-lg lg:text-2xl font-bold font-EB">{step.title}</h2>
+              <p className="mt-4 text-sm lg:text-lg">{step.text}</p>
             </div>
           </div>
         </>
@@ -51,7 +51,7 @@ const StepCard = ({ step, isLeft }: { step: { id: number; title: string; text: s
 
 export default function StepsComponent() {
   return (
-    <div className="relative flex flex-col gap-10 w-full w-11/12 lg:w-11/12 xl:w-8/12">
+    <div className="relative flex flex-col gap-10 w-full lg:w-11/12 xl:w-8/12">
       <div className="font-EB font-semibold md:text-4xl text-center text-3xl w-full leading-tight">How it Works</div>
       <div>
         {steps.map((step, index) => (

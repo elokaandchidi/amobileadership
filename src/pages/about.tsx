@@ -11,7 +11,7 @@ const About = () => {
   return (
     <div className='flex flex-col items-center gap-10 w-11/12 lg:w-11/12 xl:w-8/12'>
       <div className="w-full text-left md:text-[3rem] text-3xl md:mt-7 mt-4 font-semibold">About Us</div>
-      <div className="flex flex-col gap-10 md:w-4/5">
+      <div className="flex flex-col gap-10 md:w-4/5 mb-24 lg:mb-50">
         <div className="flex flex-col gap-5">
           <div className="font-semibold md:text-[2rem] text-lg">Mission</div>
           <div className="leading-relaxed md:text-sm text-xs">Our Mission is to inspire creative thinking and prepare individuals for the future, utimately making a postive impact on their communities</div>

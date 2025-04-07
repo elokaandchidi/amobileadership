@@ -1,27 +1,5 @@
 // export const BASE_API_URL = process.env.REACT_APP_API_URL
 
-// export enum ErrorMessage {
-//   INVALID_FIRSTNAME = '⛔ First Name is required',
-//   INVALID_LASTNAME = '⛔ Last Name is required',
-//   INVALID_EMAIL = '⛔ Email is invalid',
-//   INVALID_PASSWORD = '⛔ Your password must contain at least an uppercase, a lowercase and a special character.',
-//   SUCCESSFULLY_SYNCED = `✅ Successfully synced`,
-// }
-
-// export enum ErrorTypes {
-//   ERROR_EMAIL = 'email',
-//   ERROR_PASSWORD = 'password',
-//   ERROR_FIRSTNAME = 'firstname',
-//   ERROR_LASTNAME = 'lastname',
-// }
-
-// export const errorMessageMap: Record<ErrorTypes, ErrorMessage> = {
-//   [ErrorTypes.ERROR_EMAIL]: ErrorMessage.INVALID_EMAIL,
-//   [ErrorTypes.ERROR_PASSWORD]: ErrorMessage.INVALID_PASSWORD,
-//   [ErrorTypes.ERROR_FIRSTNAME]: ErrorMessage.INVALID_FIRSTNAME,
-//   [ErrorTypes.ERROR_LASTNAME]: ErrorMessage.INVALID_LASTNAME,
-// }
-
 import studentsImg from "../assets/images/home-students.webp";
 import parentsImg from "../assets/images/home-parents.webp"
 import institutionsImg from "../assets/images/home-institutions.webp"
@@ -99,3 +77,30 @@ export const enrollMessageMap: Record<
   [EnrolleeTypes.INSTITUTION]: EnrollMessage.INSTITUTION,
   [EnrolleeTypes.SPONSORS]: EnrollMessage.SPONSORS,
 };
+
+export enum ErrorMessage {
+  INVALID_EMAIL = '⛔ Email is required',
+  INVALID_MOBILE = '⛔ Phone Number is required',
+  INVALID_FULLNAME = '⛔ Full Name is required',
+  INVALID_REFERRAL = '⛔ Referral is required',
+  INVALID_MESSAGE = '⛔ Other Detail is required',
+  INVALID_ENROLLEE_TYPE = '⛔ Enrollee Type is required',
+}
+
+export enum ErrorTypes {
+  ERROR_EMAIL = 'email',
+  ERROR_MOBILE = 'phone',
+  ERROR_FULLNAME = 'fullname',
+  ERROR_REFERRAL = 'referral',
+  ERROR_MESSAGE = 'body',
+  ERROR_ENROLLEE_TYPE = 'type',
+}
+
+export const errorMessageMap: Record<ErrorTypes, ErrorMessage> = {
+  [ErrorTypes.ERROR_EMAIL]: ErrorMessage.INVALID_EMAIL,
+  [ErrorTypes.ERROR_MOBILE]: ErrorMessage.INVALID_MOBILE,
+  [ErrorTypes.ERROR_FULLNAME]: ErrorMessage.INVALID_FULLNAME,
+  [ErrorTypes.ERROR_REFERRAL]: ErrorMessage.INVALID_REFERRAL,
+  [ErrorTypes.ERROR_MESSAGE]: ErrorMessage.INVALID_MESSAGE,
+  [ErrorTypes.ERROR_ENROLLEE_TYPE]: ErrorMessage.INVALID_ENROLLEE_TYPE,
+}
