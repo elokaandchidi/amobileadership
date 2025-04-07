@@ -5,6 +5,8 @@ import donationImg from '../assets/images/gallery11.jpg';
 import logo from '../assets/images/logo.png';
 import { useAlert } from "../utils/notification/alertcontext";
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { LuShieldCheck } from "react-icons/lu";
+
 
 interface DonationMetadata {
   name: string;
@@ -47,7 +49,7 @@ export default function DonationForm({closeModal} : DonationFormProps) {
 
   const handleCloseModal = () => {
     if (closeModal) {
-        closeModal(false);
+      closeModal(false);
     }
   };
 
@@ -73,7 +75,7 @@ export default function DonationForm({closeModal} : DonationFormProps) {
         <div className='w-full flex flex-row lg:-right-7 top-2 lg:-top-7 justify-end z-40 absolute'>
           <AiFillCloseCircle size={30} color='white' onClick={handleCloseModal}  className='cursor-pointer'/>
         </div>
-        <div className="mx-auto bg-white rounded-t-3xl lg:rounded-b-3xl lg:w-3/5 w-11/12 h-[30rem] lg:h-[40rem] shadow-md relative">
+        <div className="mx-auto bg-white rounded-t-3xl lg:rounded-b-3xl lg:w-3/5 w-11/12 h-[30rem] lg:h-[38rem] shadow-md relative">
           <img src={donationImg} alt='donationImg' className='aspect-16/9 object-cover rounded-t-3xl w-full'/>
           <img src={logo} alt='logo' className='h-24 pl-2'/>
           <div className="text-gray-600 mb-8 px-6">
@@ -96,8 +98,12 @@ export default function DonationForm({closeModal} : DonationFormProps) {
             </p>
           </div>
         </div>
-        <div className="lg:w-2/5 w-11/12 flex justify-center bg-white rounded-b-3xl lg:rounded-3xl shadow-md h-[40rem]">
-          <div className="w-10/12 flex flex-col relative pt-10">
+        <div className="lg:w-2/5 w-11/12 flex justify-center bg-white rounded-b-3xl lg:rounded-3xl shadow-md h-[38rem]">
+          <div className="w-10/12 flex flex-col relative pt-10 text-sm">
+            <div className="flex flex-row items-center justify-center gap-2 pb-5 w-full">
+              <LuShieldCheck size={25} color="#b8935c"/>
+              <span className="text-lg font-bold">Secure donation</span>
+            </div>
             <div className="grid grid-cols-2 border border-gray-500/40 gap-4 rounded-lg mb-6">
               <button
                 onClick={() => setDonationType("once")}
