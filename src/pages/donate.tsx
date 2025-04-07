@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PaystackButton } from "react-paystack";
 import { config } from "../utils/config";
 
