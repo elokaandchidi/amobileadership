@@ -18,7 +18,7 @@ const Navbar = () => {
         </NavLink>
         <div className="hidden lg:block">
           <div className={`flex flex-col text-lg justify-end`}>
-            <div className={`tracking-wide flex flex-row flex-wrap justify-end w-full gap-5 text-lg items-center`}>
+            <div className={`tracking-wide flex flex-row flex-wrap justify-end w-full gap-5 text-sm items-center`}>
               <NavLink to='/about' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
                 About Us
               </NavLink>

@@ -36,11 +36,13 @@ import sponsorsImg from "../assets/images/home-sponsors.webp"
 import schoolsImg from "../assets/images/home-school.webp"
 import libraryImg from "../assets/images/home-library.png"
 import { NavLink } from "react-router-dom";
+import DonationForm from "../components/donationForm";
 
 
 
 const Home = () => {
   const [newsList, setNewsList] = useState<NewInfo[]>([]);
+  const [showDonateModal, setShowDonateModal] = useState(false);
 
   const [winnerList, setWinnerList] = useState<PrizeWinnerInfo[]>([]);
   
@@ -87,6 +89,10 @@ const Home = () => {
     },
   }
 
+  const handleCloseModal = (value: boolean) => {
+    setShowDonateModal(value);
+  };
+
   useEffect(() => {
     const getNewsQuery = newsDetailMoreQuery('');
 
@@ -97,18 +103,19 @@ const Home = () => {
   }, [])
   return (
     <div className='flex flex-col items-center md:gap-[5rem] gap-10 w-full'>
+      {showDonateModal && <DonationForm closeModal={(value) => handleCloseModal(value)}/>}
       <div className='banner-home bg-cover flex flex-col items-center w-full'>
         <div className='w-full flex flex-col justify-center items-center bg-[#1f223d]/84 lg:py-[15rem] py-[7rem] h-full'>
           <div className='flex flex-col lg:gap-10 gap-8 w-11/12 lg:w-11/12 xl:w-8/12 items-center text-white'>
             <div className="font-EB text-center text-4xl lg:text-[3rem] font-semibold">Empower Minds, Ignite Change: <br/>Fuel Education</div>
             <div className="font-nunito text-center lg:w-1/2">We are a charity organization dedicated to driving education, academic excellence, entrepreneurship and workplace skills through our impactful essay competition program. Join us today!</div>
             <div className="flex flex-row gap-5 justify-center items-center font-EB font-medium">
-              <NavLink to="/enroll" target="_blank" className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
+              <NavLink to="/enroll" className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
                 ENROLL
               </NavLink>
-              <NavLink to="donate" className="p-3 px-5 rounded-sm text-center text-[#1f223d] bg-white">
+              <div onClick={() => setShowDonateModal(true)} className="p-3 px-5 rounded-sm text-center text-[#1f223d] bg-white cursor-pointer">
                 DONATE
-              </NavLink>
+              </div>
             </div>
           </div>
         </div>
@@ -304,7 +311,7 @@ const Home = () => {
               Fill in the form and send us your details
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <NavLink to={'/enroll'} state={{ type: 'student' }} target="_blank" className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enroll'} state={{ type: 'student' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
               </NavLink>
             </div>

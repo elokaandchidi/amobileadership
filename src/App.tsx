@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 // import './App.css'
 import Alert from './utils/notification/alert'
 import { AlertProvider } from './utils/notification/alertcontext'
-import { About, BackgroundHistory, Contact, Donate, Enroll, Essay, Home, News, NewsDetail, NotFound, PrizeComponent, WinnersAndParticipants} from './pages/_route'
+import { About, BackgroundHistory, Contact, Enroll, Essay, Home, News, NewsDetail, NotFound, PrizeComponent, WinnersAndParticipants} from './pages/_route'
 import Footer from './components/footer'
 import Navbar from './components/navbar'
 import { useEffect } from 'react'
@@ -35,10 +35,7 @@ function App() {
           <Route path="/winnersAndParticipants" element={<WinnersAndParticipants/>} />
           <Route path="/enroll" element={<Enroll/>} />
           <Route path="/prize" element={<PrizeComponent/>} />
-          <Route path="/donate" element={<Donate/>} />
           <Route path="/background-and-history" element={<BackgroundHistory/>} />
-          {/* <Route path="/services" element={<Services/>} />
-          <Route path="/services/:id" element={<ServiceDetail/>} /> */}
           <Route path="/*" element={<NotFound/>} />
         </Routes>
       </AlertProvider>
