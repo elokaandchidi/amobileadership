@@ -6,6 +6,5 @@ export { default as News } from './updates';
 export { default as BackgroundHistory } from './history';
 export { default as PrizeComponent } from './prize';
 export { default as NewsDetail } from './updatesDetail';
-export { default as Contact } from './contact';
 export { default as WinnersAndParticipants } from './winnersAndParticipants';
 export { default as NotFound } from './notFound';

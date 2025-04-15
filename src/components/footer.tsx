@@ -19,7 +19,7 @@ const Footer = () => {
           <NavLink to='/amobi-essay-prize' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
             Amobi Essay Prize
           </NavLink>
-          <NavLink to='/services' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
+          <NavLink to='/winnersAndParticipants' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
             Winners and Participants
           </NavLink>
           <NavLink to='/news-updates' className={({ isActive }) => (isActive ? 'font-semibold' : '')}>

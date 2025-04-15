@@ -444,9 +444,9 @@ const Home = () => {
           <div className='text-lg font-semibold mb-3'>No news found</div>
         </div>
         <div className="flex flex-col w-full items-center">
-          <div className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-semibold text-sm">
+          <NavLink to="/news-updates" className="p-3 px-5 rounded-sm bg-[#b8935c]/90 uppercase text-white font-EB font-semibold text-sm">
             Read More
-          </div>
+          </NavLink>
         </div>
       </div>
       <div className='banner2-home bg-cover flex flex-col items-center w-full'>
