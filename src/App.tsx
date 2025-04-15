@@ -6,22 +6,18 @@ import { AlertProvider } from './utils/notification/alertcontext'
 import { About, BackgroundHistory, Contact, Enroll, Essay, Home, News, NewsDetail, NotFound, PrizeComponent, WinnersAndParticipants} from './pages/_route'
 import Footer from './components/footer'
 import Navbar from './components/navbar'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 function App() {
   const { pathname } = useLocation();
+  const containerRef = useRef<HTMLDivElement>(null); // Create ref
 
-  
-  
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      console.log("window", window);
-      console.log(pathname);
-      window.scrollTo(0, 0);
-    }
+    // Scroll the container instead of window
+    containerRef.current?.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div className={`flex flex-col items-center w-full overflow-auto h-screen `}>
+    <div ref={containerRef} className="flex flex-col items-center w-full overflow-auto h-screen">
       <Navbar/>
       <AlertProvider>
         <Alert />  

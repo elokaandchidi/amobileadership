@@ -22,12 +22,12 @@ const ParticipantsComponent = () => {
     return (
         <div className="flex flex-col w-full gap-5">
           {participantList?.map((participant, index) => (
-            <div key={index} className={`flex flex-col gap-7 w-full`}>
+            <div key={index} className={`flex flex-col gap-5 w-full`}>
               <div className="font-EB font-semibold text-lg">{participant.title}</div>
               {participant?.schools?.map((school, subIndex) => (
-                <div key={subIndex} className={`flex flex-col gap-5`}>
+                <div key={subIndex} className={`flex flex-col gap-4`}>
                   <div className="text-sm">{school?.name}</div>
-                  <img src={school.imageUrl} alt="elokaImg" className="aspect-square h-[20rem] object-cover"/>
+                  <img src={school.imageUrl} alt="participant" className="lg:h-[25rem] lg:object-cover"/>
                 </div>
 
               ))}

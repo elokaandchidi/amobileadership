@@ -71,11 +71,11 @@ export default function DonationForm({closeModal} : DonationFormProps) {
 
   return (
     <div className="absolute h-screen flex flex-col bg-black/60 gap-3 z-20 top-0 lg:justify-center lg:items-center w-screen overflow-auto">
-      <div className="max-w-5xl relative flex lg:flex-row flex-col items-center lg:gap-10 pt-10 lg:pt-0 pb-10">
+      <div className="max-w-5xl relative flex md:flex-row flex-col items-center lg:gap-10 md:gap-5 pt-10 lg:pt-0 pb-10">
         <div className='w-full flex flex-row lg:-right-7 top-2 lg:-top-7 justify-end z-40 absolute'>
           <AiFillCloseCircle size={30} color='white' onClick={handleCloseModal}  className='cursor-pointer'/>
         </div>
-        <div className="mx-auto bg-white rounded-t-3xl lg:rounded-b-3xl lg:w-3/5 w-11/12 h-[30rem] lg:h-[38rem] shadow-md relative">
+        <div className="mx-auto bg-white rounded-t-3xl md:rounded-b-3xl lg:w-3/5 w-11/12 h-[30rem] md:h-[38rem] shadow-md relative">
           <img src={donationImg} alt='donationImg' className='aspect-16/9 object-cover rounded-t-3xl w-full'/>
           <img src={logo} alt='logo' className='h-24 pl-2'/>
           <div className="text-gray-600 mb-8 px-6">
@@ -98,7 +98,7 @@ export default function DonationForm({closeModal} : DonationFormProps) {
             </p>
           </div>
         </div>
-        <div className="lg:w-2/5 w-11/12 flex justify-center bg-white rounded-b-3xl lg:rounded-3xl shadow-md h-[38rem]">
+        <div className="lg:w-2/5 w-11/12 flex justify-center bg-white rounded-b-3xl md:rounded-3xl shadow-md h-[38rem]">
           <div className="w-10/12 flex flex-col relative pt-10 text-sm">
             <div className="flex flex-row items-center justify-center gap-2 pb-5 w-full">
               <LuShieldCheck size={25} color="#b8935c"/>

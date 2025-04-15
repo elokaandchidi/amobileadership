@@ -27,11 +27,11 @@ const WinnerComponent = () => {
           {winnerList?.map((winner, index) => (
             <div key={index} className={`flex flex-col gap-7 w-full`}>
               <div className="font-EB font-semibold text-lg">{winner?.year}</div>
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid md:grid-cols-2 gap-7">
                 {winner?.prizewinners?.map((prizewinner, subIndex) => (
-                  <div key={subIndex} className="flex flex-col w-full max-w-4xl mx-auto justify-between items-center gap-7 lg:py-10 p-4 border border-gray-200 rounded-lg">
+                  <div key={subIndex} className="flex flex-col w-full max-w-4xl mx-auto justify-between items-center gap-7 lg:py-10 p-4 relative border border-gray-200 rounded-lg">
                     <div 
-                      className={`${subIndex % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} flex flex-col items-center justify-center w-full h-[15rem] bg-cover bg-center bg-no-repeat`}
+                      className={`${subIndex % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} relative flex flex-col items-center justify-center w-full h-[15rem] bg-cover bg-center bg-no-repeat`}
                       style={{
                         backgroundSize: 'contain',
                         backgroundPosition: 'center center'
@@ -40,7 +40,7 @@ const WinnerComponent = () => {
                       <img 
                         src={prizewinner?.imageUrl || noImg} 
                         alt="winner" 
-                        className="object-cover relative w-3/5 rounded-full aspect-square shadow-lg"
+                        className="object-cover relative md:w-1/2 w-3/5 rounded-full aspect-square shadow-lg"
                       />
                     </div>
         

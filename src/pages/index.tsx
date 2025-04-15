@@ -157,7 +157,7 @@ const Home = () => {
           <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">Donate</div>
             <div className="leading-relaxed md:text-sm text-xs">There are many ways to get involved. if you would like to, please contact us through our social media channels or just DONATE</div>
-            <NavLink to="/donate" className="uppercase border rounded-sm py-3 lg:w-3/4 text-center font-EB text-xs">Give to our cause</NavLink>
+            <div onClick={() => setShowDonateModal(true)} className="uppercase cursor-pointer border rounded-sm py-3 lg:w-3/4 text-center font-EB text-xs">Give to our cause</div>
           </div>
           <img src={donationsImg} alt="donationsImg" className="aspect-4/5 h-full object-cover"/>
         </div>
