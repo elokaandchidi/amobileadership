@@ -7,7 +7,7 @@ import sponsorsImg from "../assets/images/home-sponsors.webp"
 
 export const EnrollMessage = {
   STUDENT: {
-    title: "Enroll",
+    title: "Enrol",
     subtitle: "Express your interest as a student. Complete the form below.",
     footer: {
       title: "Student",
@@ -16,7 +16,7 @@ export const EnrollMessage = {
     },
   },
   PARENT: {
-    title: "Enroll your Child",
+    title: "Enrol your Child",
     subtitle:
       "Interested in enrolling your child/ward? Complete the form below.",
     footer: {
@@ -24,7 +24,7 @@ export const EnrollMessage = {
       image: parentsImg,
       body: `<div className="w-full flex flex-col gap-5 opacity-80">
           <div className="">
-            Read <span>“<a href='/amobi-essay-prize' className="underline">How it works</a>”</span> and understand the benefits to your child and their future.
+            Read <span>“<Link to="/#howitworks" className="underline">How it works</Link>”</span> and understand the benefits to your child and their future.
           </div>
           <div className="">
             Complete registration and pay fee
@@ -36,14 +36,14 @@ export const EnrollMessage = {
     },
   },
   INSTITUTION: {
-    title: "Enroll your students",
+    title: "Enrol your students",
     subtitle:
       "Inspire drive in your students. Enrol your students.",
     footer: {
       title: "Educational Institutions",
       image: institutionsImg,
       body: `<div className="opacity-80 text-sm">
-              Read “<a href='/amobi-essay-prize' className="underline">How it works</a>” and understand the benefits for your students, your institution and yourself.
+              Read “<Link to="/#howitworks" className="underline">How it works</Link>” and understand the benefits for your students, your institution and yourself.
             </div>`,
     },
   },

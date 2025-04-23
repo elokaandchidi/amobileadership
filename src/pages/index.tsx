@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BlockContent from '@sanity/block-content-to-react';
-
+// @ts-ignore
+import { Link } from 'react-router-dom';
 
 import { config } from "../utils/config";
 import { client } from "../utils/client";
@@ -35,12 +36,13 @@ import institutionsImg from "../assets/images/home-institutions.webp"
 import sponsorsImg from "../assets/images/home-sponsors.webp"
 import schoolsImg from "../assets/images/home-school.webp"
 import libraryImg from "../assets/images/home-library.png"
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import DonationForm from "../components/donationForm";
 
 
 
 const Home = () => {
+  const location = useLocation();
   const [newsList, setNewsList] = useState<NewInfo[]>([]);
   const [showDonateModal, setShowDonateModal] = useState(false);
 
@@ -101,6 +103,27 @@ const Home = () => {
       setNewsList(data);
     })
   }, [])
+
+  useEffect(() => {
+    const scrollToSection = () => {
+      const hash = location.hash.replace('#', '');
+      if (hash) {
+        // Wait for the page to load
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100); // Adjust delay as needed
+      }
+    };
+
+    scrollToSection();
+  }, [location.hash]);
+
   return (
     <div className='flex flex-col items-center md:gap-[5rem] gap-10 w-full'>
       {showDonateModal && <DonationForm closeModal={(value) => handleCloseModal(value)}/>}
@@ -237,7 +260,7 @@ const Home = () => {
         </div>
         <img src={mechanicsImg} alt="mechanicsImg" className="aspect-square object-cover "/>
       </div>
-      <div className="w-11/12 lg:w-11/12 xl:w-8/12 flex flex-col items-center">
+      <div id="howitworks" className="w-11/12 lg:w-11/12 xl:w-8/12 flex flex-col items-center">
         <StepFlow/>
       </div>
       <div className="flex flex-col gap-2 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
@@ -319,7 +342,7 @@ const Home = () => {
           <div  className="flex flex-col gap-7 md:order-3 order-4">
             <div className="font-EB font-bold text-2xl leading-tight">Parent</div>
             <div className="opacity-80">
-              Read “<NavLink to='/amobi-essay-prize' className="underline">How it works</NavLink>” and understand the benefits to your child and their future<br />
+              Read “<a href='#howitworks' className="underline">How it works</a>” and understand the benefits to your child and their future<br />
               Complete registration and pay fee <br/>
               Receive course materials, timelines and other supporting information.  Start the learning!!
             </div>
@@ -334,7 +357,7 @@ const Home = () => {
           <div className="flex flex-col gap-7 order-6">
             <div className="font-EB font-bold text-2xl leading-tight">Educational Institutions</div>
             <div className="opacity-80 text-sm">
-              Read “<NavLink to='/amobi-essay-prize' className="underline">How it works</NavLink>” and understand the benefits for your students, your institution and yourself.
+              Read “<a href='#howitworks' className="underline">How it works</a>” and understand the benefits for your students, your institution and yourself.
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
               <NavLink to={'/enroll'} state={{ type: 'institutions' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
@@ -359,7 +382,9 @@ const Home = () => {
       <div className="flex flex-col gap-2 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
         <div className="font-EB font-semibold text-[2rem] leading-tight">Donate or Get Involved</div>
         <div className="opacity-80 font-nunito mt-5 text-center">
-          There are many ways to get involved. If you would like to, please contact us.
+          There are many ways to get involved. If you would like to, please <a href="https://www.instagram.com/amobifoundation?igshid=MzMyNGUyNmU2YQ%3D%3D" target="_blank" className="text-blue-400">
+          contact us
+        </a>
         </div>
       </div>
       <div className="flex flex-col gap-5 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
