@@ -30,7 +30,7 @@ function App() {
           <Route path="/news-updates/:id" element={<NewsDetail/>} />
           <Route path="/news-updates" element={<News/>} />
           <Route path="/winnersAndParticipants" element={<WinnersAndParticipants/>} />
-          <Route path="/enroll" element={<Enroll/>} />
+          <Route path="/enrol" element={<Enroll/>} />
           <Route path="/prize" element={<PrizeComponent/>} />
           <Route path="/background-and-history" element={<BackgroundHistory/>} />
           <Route path="/*" element={<NotFound/>} />

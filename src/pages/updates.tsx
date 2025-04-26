@@ -114,10 +114,10 @@ const News = () => {
       </div>
 
       {!loading && newsList.length > 0 && 
-        <div className="grid md:grid-cols-3 w-full gap-10">
+        <div className="grid md:grid-cols-3 md:items-end w-full gap-10">
           {newsList?.map((post) => (
             <NavLink to={`/news-updates/${post?._id.replace('drafts.', '')}`} className="flex flex-col w-full font-nunito gap-5" key={post._id}>
-              <img src={post.imageUrl} alt={post.title} className="aspect-square object-fill"/>
+              <img src={post.imageUrl} alt={post.title} className="object-cover"/>
               <div className="font-bold text-lg line-clamp-1 leading-6 hover:underline">{post.title}</div>
               <div className="opacity-80 text-sm w-full line-clamp-3">
                 <BlockContent className='' blocks={post?.body} serializers={serializers} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { FaAngleDown, FaAngleUp, FaCircleCheck } from "react-icons/fa6";
+import { FaCircleCheck } from "react-icons/fa6";
 
 interface SelectProps {
   name?: string;
@@ -99,7 +99,7 @@ const SelectField: React.FC<SelectProps> = ({
 
       <div
         onClick={() => !disabled && setShow(!show)}
-        className={`flex flex-row items-center py-2 pr-2 border w-full cursor-pointer ${
+        className={`flex items-center justify-between py-2 pr-2 border w-full cursor-pointer ${
           disabled
             ? "bg-gray-300 border-gray-400 cursor-not-allowed"
             : "bg-white border-secondary"
@@ -110,12 +110,18 @@ const SelectField: React.FC<SelectProps> = ({
           readOnly
           value={selectedValue || ""}
           placeholder={placeholder}
-          className={`outline-none px-2 bg-transparent w-full ${
+          className={`outline-none z-30 px-2 bg-transparent flex-1 ${
             disabled ? "text-gray-400 cursor-not-allowed" : "text-primary"
           }`}
           disabled={disabled}
         />
-        {show ? <FaAngleUp /> : <FaAngleDown />}
+        <div className="flex-shrink-0 cursor-pointer">
+          {show ? (
+            <span className="text-sm">▲</span>
+          ) : (
+            <span className="text-sm">▼</span>
+          )}
+        </div>
       </div>
     </div>
   );

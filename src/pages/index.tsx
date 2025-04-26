@@ -133,8 +133,8 @@ const Home = () => {
             <div className="font-EB text-center text-4xl lg:text-[3rem] font-semibold">Empower Minds, Ignite Change: <br/>Fuel Education</div>
             <div className="font-nunito text-center lg:w-1/2">We are a charity organization dedicated to driving education, academic excellence, entrepreneurship and workplace skills through our impactful essay competition program. Join us today!</div>
             <div className="flex flex-row gap-5 justify-center items-center font-EB font-medium">
-              <NavLink to="/enroll" className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
-                ENROLL
+              <NavLink to="/enrol" className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
+                ENROL
               </NavLink>
               <div onClick={() => setShowDonateModal(true)} className="p-3 px-5 rounded-sm text-center text-[#1f223d] bg-white cursor-pointer">
                 DONATE
@@ -173,7 +173,7 @@ const Home = () => {
           <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">How to Participate</div>
             <div className="leading-relaxed md:text-sm text-xs">You can participate as a parent, student and even sponsor. Scroll to find out more.</div>
-            <NavLink to="/enroll" className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">Find Out More</NavLink>
+            <NavLink to="/enrol" className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">Find Out More</NavLink>
           </div>
         </div>
         <div className="grid grid-cols-2 bg-[#1c923d]/80">
@@ -334,7 +334,7 @@ const Home = () => {
               Fill in the form and send us your details
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <NavLink to={'/enroll'} state={{ type: 'student' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enrol'} state={{ type: 'student' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
               </NavLink>
             </div>
@@ -347,7 +347,7 @@ const Home = () => {
               Receive course materials, timelines and other supporting information.  Start the learning!!
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <NavLink to={'/enroll'} state={{ type: 'parent' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enrol'} state={{ type: 'parent' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
               </NavLink>
             </div>
@@ -360,7 +360,7 @@ const Home = () => {
               Read “<a href='#howitworks' className="underline">How it works</a>” and understand the benefits for your students, your institution and yourself.
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <NavLink to={'/enroll'} state={{ type: 'institutions' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enrol'} state={{ type: 'institutions' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
               </NavLink>
             </div>
@@ -371,7 +371,7 @@ const Home = () => {
               There are many ways to get involved.  Let us know your thoughts.
             </div>
             <div className="flex flex-row gap-5 items-center font-EB font-medium">
-              <NavLink to={'/enroll'} state={{ type: 'sponsors' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
+              <NavLink to={'/enrol'} state={{ type: 'sponsors' }} className="p-3 px-5 rounded-sm bg-[#b8935c]/80 uppercase text-white">
                 Complete form
               </NavLink>
             </div>
