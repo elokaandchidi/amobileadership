@@ -127,10 +127,10 @@ const Home = () => {
   return (
     <div className='flex flex-col items-center md:gap-[5rem] gap-10 w-full'>
       {showDonateModal && <DonationForm closeModal={(value) => handleCloseModal(value)}/>}
-      <div className='banner-home bg-cover flex flex-col items-center w-full'>
-        <div className='w-full flex flex-col justify-center items-center bg-[#1f223d]/84 lg:py-[15rem] py-[7rem] h-full'>
+      <div className='banner-home bg-cover bg-center flex flex-col items-center w-full'>
+        <div className='w-full flex flex-col justify-center items-center bg-[#1f223d]/84 lg:py-[15rem] py-[8rem] h-full'>
           <div className='flex flex-col lg:gap-10 gap-8 w-11/12 lg:w-11/12 xl:w-8/12 items-center text-white'>
-            <div className="font-EB text-center text-4xl lg:text-[3rem] font-semibold">Empower Minds, Ignite Change: <br/>Fuel Education</div>
+            <div className="font-EB text-center leading-12 text-[2.6rem] lg:text-[3rem] font-semibold">Empower Minds, <br className="lg:hidden inline-flex"/> Ignite Change: <br/> Fuel Education</div>
             <div className="font-nunito text-center lg:w-1/2">We are a charity organization dedicated to driving education, academic excellence, entrepreneurship and workplace skills through our impactful essay competition program. Join us today!</div>
             <div className="flex flex-row gap-5 justify-center items-center font-EB font-medium">
               <NavLink to="/enrol" className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
