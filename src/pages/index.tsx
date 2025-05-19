@@ -396,8 +396,8 @@ const Home = () => {
           <img src={libraryImg} alt="libraryImg" className="lg:aspect-[3/4] aspect-square h-full object-cover"/>
           <div className="flex flex-col gap-5 lg:p-7 p-4 text-white bg-[#f17811]">
             <div className=" font-semibold lg:text-lg text-sm">2023</div>
-            <div className="font-nunito leading-6 lg:text-sm text-xs">The 6th Edition of the Amobi Essay Prize was held in ighobi College, Lagos (Boys school).</div>
-            <div className="font-nunito mt-2 leading-6 lg:text-sm text-xs">The 5th Edition of the Amobi Essay Prize was held in Vivan Flower Memorial College, Lagos (Boys school).</div>
+            <div className="font-nunito leading-6 lg:text-sm text-xs">The 6th Edition of the Amobi Essay Prize was held in Igbogi College, Lagos (Boys school).</div>
+            <div className="font-nunito mt-2 leading-6 lg:text-sm text-xs">The 5th Edition of the Amobi Essay Prize was held in Vivian Fowler Memorial College, Lagos (Girls school).</div>
           </div>
           <img src={schoolsImg} alt="schoolsImg" className="lg:aspect-[3/4] aspect-square h-full object-cover"/>
           <div className="flex flex-col gap-5 lg:p-7 p-4 text-white bg-[#0e9617]">
