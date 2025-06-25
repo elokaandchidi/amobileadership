@@ -41,7 +41,7 @@ const NewsDetail = () => {
         <img
           src={postDetail.imageUrl}
           alt={`Slide ${postDetail._id}`}
-          className=" w-1/2 max-h-5/6 object-cover"
+          className=" lg:w-1/2 w-2/3 lg:max-h-5/6 object-cover"
         />
         <div className='lg:w-2/3 text-sm '>
           <BlockText blocks={postDetail?.body} />

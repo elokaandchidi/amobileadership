@@ -27,7 +27,7 @@ const ParticipantsComponent = () => {
               {participant?.schools?.map((school, subIndex) => (
                 <div key={subIndex} className={`flex flex-col gap-4`}>
                   <div className="text-sm">{school?.name}</div>
-                  <img src={school.imageUrl} alt="participant" className="lg:h-[25rem] lg:object-cover"/>
+                  <img src={school.imageUrl} alt="participant" className="lg:min:h-[25rem] lg:object-cover"/>
                 </div>
 
               ))}
