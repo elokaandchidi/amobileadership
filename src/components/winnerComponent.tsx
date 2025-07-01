@@ -34,13 +34,13 @@ const WinnerComponent = () => {
                       className={`${subIndex % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} relative flex flex-col items-center justify-center w-full h-[15rem] bg-cover bg-center bg-no-repeat`}
                       style={{
                         backgroundSize: 'contain',
-                        backgroundPosition: 'center center'
+                        backgroundPosition: 'top center'
                       }}
                     >
                       <img 
                         src={prizewinner?.imageUrl || noImg} 
                         alt="winner" 
-                        className="object-cover relative md:w-1/2 w-3/5 rounded-full aspect-square shadow-lg"
+                        className="object-cover object-top relative md:w-1/2 w-3/5 rounded-full aspect-square shadow-lg"
                       />
                     </div>
         
