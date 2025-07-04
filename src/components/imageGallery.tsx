@@ -54,7 +54,7 @@ const ImageGallery: React.FC = () => {
   }, [isPlaying]);
 
   return (
-    <div className="flex flex-col w-8/12 items-center space-y-4 p-4">
+    <div className="flex flex-col lg:w-8/12 w-full items-center space-y-4 p-4">
       <div className="flex gap-5 justify-end w-full">
         <FaBackward className="opacity-80 hover:opacity-100 transition" onClick={prevImage}/>
         <div

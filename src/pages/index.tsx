@@ -425,7 +425,7 @@ const Home = () => {
                 <img 
                   src={winner?.imageUrl || noImg} 
                   alt="winner" 
-                  className="object-cover relative w-3/5 rounded-full aspect-square shadow-lg"
+                  className="object-cover object-top relative w-3/5 rounded-full aspect-square shadow-lg"
                 />
               </div>
 
