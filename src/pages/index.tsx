@@ -143,7 +143,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 w-11/12 lg:w-11/12 xl:w-8/12 text-sm">lg:
+      <div className="grid md:grid-cols-2 w-11/12 lg:w-11/12 xl:w-8/12 text-sm">
         <div className="grid grid-cols-2 bg-[#7a57d1]">
           <div className="flex flex-col justify-around gap-5 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">Our Mission</div>
