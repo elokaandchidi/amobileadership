@@ -143,7 +143,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 w-11/12 lg:w-11/12 xl:w-8/12 text-sm">
+      <div className="grid md:grid-cols-2 w-11/12 lg:w-11/12 xl:w-8/12 text-sm">lg:
         <div className="grid grid-cols-2 bg-[#7a57d1]">
           <div className="flex flex-col justify-around gap-5 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">Our Mission</div>
@@ -416,7 +416,7 @@ const Home = () => {
           {winnerList?.map((winner, index) => (
             <div key={index} className="flex flex-col w-full max-w-4xl mx-auto justify-between items-center gap-7 lg:py-10 p-4 border border-gray-200 rounded-lg">
               <div 
-                className={`${index % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} flex flex-col relative items-center justify-center w-full h-[15rem] bg-cover bg-center bg-no-repeat`}
+                className={`${index % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} flex flex-col relative items-center  justify-center w-full p-10 bg-cover bg-center bg-no-repeat`}
                 style={{
                   backgroundSize: 'contain',
                   backgroundPosition: 'center center'
@@ -425,7 +425,7 @@ const Home = () => {
                 <img 
                   src={winner?.imageUrl || noImg} 
                   alt="winner" 
-                  className="object-cover object-top relative w-3/5 rounded-full aspect-square shadow-lg"
+                  className="object-cover object-top relative h-[10rem] md:h-[12rem] rounded-full aspect-square shadow-lg"
                 />
               </div>
 

@@ -31,16 +31,16 @@ const WinnerComponent = () => {
                 {winner?.prizewinners?.map((prizewinner, subIndex) => (
                   <div key={subIndex} className="flex flex-col w-full max-w-4xl mx-auto justify-between items-center gap-7 lg:py-10 p-4 relative border border-gray-200 rounded-lg">
                     <div 
-                      className={`${subIndex % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} relative flex flex-col items-center justify-center w-full h-[15rem] bg-cover bg-center bg-no-repeat`}
+                      className={`${index % 2 === 0 ? `bg-[url('/images/bg-img-1.svg')]` : `bg-[url('/images/bg-img-2.svg')]`} flex flex-col relative items-center  justify-center w-full p-10 bg-cover bg-center bg-no-repeat`}
                       style={{
                         backgroundSize: 'contain',
-                        backgroundPosition: 'top center'
+                        backgroundPosition: 'center center'
                       }}
                     >
                       <img 
                         src={prizewinner?.imageUrl || noImg} 
                         alt="winner" 
-                        className="object-cover object-top relative md:w-1/2 w-3/5 rounded-full aspect-square shadow-lg"
+                        className="object-cover object-top relative h-[10rem] md:h-[12rem] rounded-full aspect-square shadow-lg"
                       />
                     </div>
         
