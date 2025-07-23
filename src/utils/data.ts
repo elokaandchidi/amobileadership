@@ -18,7 +18,7 @@ export const participantsQuery = () => {
 };
 
 export const winnersTop3Query = () => {  
-  const query = `*[_type == "winner"] | order(_updatedAt desc)[0...2] {
+  const query = `*[_type == "winner"] | order(_createdAt desc)[0...2] {
     year,
     prizewinner[] {
       name,

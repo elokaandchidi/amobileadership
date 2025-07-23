@@ -455,14 +455,14 @@ const Home = () => {
         <div className="text-[2rem] font-semibold">News & Updates</div>
         <div className="grid md:grid-cols-3 w-full gap-10">
           {newsList.length > 0 && newsList?.map((post) => (
-              <div className="flex flex-col w-full font-nunito" key={post._id}>
-                <img src={post.imageUrl} alt={post.title} className="aspect-2/1 object-cover"/>
-                <div className="font-bold text-lg my-3 line-clamp-2 leading-6 hover:underline">{post.title}</div>
-                <div className="opacity-80 text-sm w-full line-clamp-3">
-                  <BlockContent className='' blocks={post?.body} serializers={serializers} />
-                </div>
-                <span className="underline opacity-80 text-sm">Read more</span>
+            <NavLink to={`/news-updates/${post?._id.replace('drafts.', '')}`} className="flex flex-col w-full font-nunito" key={post._id}>
+              <img src={post.imageUrl} alt={post.title} className="aspect-2/1 object-cover"/>
+              <div className="font-bold text-lg my-3 line-clamp-2 leading-6 hover:underline">{post.title}</div>
+              <div className="opacity-80 text-sm w-full line-clamp-3">
+                <BlockContent className='' blocks={post?.body} serializers={serializers} />
               </div>
+              <span className="underline opacity-80 text-sm cursor-pointer">Read more</span>
+            </NavLink>
           ))}
         </div>
         <div className={`${newsList.length !== 0 ? 'hidden' : ''} w-full flex flex-col gap-3  items-center justify-center  my-[4rem]`}>
