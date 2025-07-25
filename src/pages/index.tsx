@@ -173,7 +173,7 @@ const Home = () => {
           <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white">
             <div className="font-EB font-semibold md:text-lg text-sm">How to Participate</div>
             <div className="leading-relaxed md:text-sm text-xs">You can participate as a parent, student and even sponsor. Scroll to find out more.</div>
-            <NavLink to="/enrol" className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">Find Out More</NavLink>
+            <a href="#howToParticipate" className="uppercase border rounded-sm py-3 lg:w-3/5 text-center font-EB text-xs">Find Out More</a>
           </div>
         </div>
         <div className="grid grid-cols-2 bg-[#1c923d]/80">
@@ -320,7 +320,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-2 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
+      <div id="howToParticipate" className="flex flex-col gap-2 items-center text-sm w-11/12 lg:w-11/12 xl:w-8/12">
         <div className="font-EB font-semibold text-[2rem] leading-tight">How to Participate</div>
         <div className="opacity-80 font-nunito mt-5">
           Listed below are the ways you can participate in The AEP Competition.  Read the section that applies to you and complete the form. 
