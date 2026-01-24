@@ -164,7 +164,7 @@ const Home = () => {
           <img src={prizeImg} alt="prizeImg" className="aspect-4/5 h-full object-cover order-2 md:order-1"/>
           <div className="flex flex-col justify-around gap-5 md:gap-3 p-7 text-white order-1 md:order-2">
             <div className="font-EB font-semibold md:text-lg text-sm">Prizes to be Won</div>
-            <div className="leading-relaxed md:text-sm text-xs">Every completing student will be entitled to a recommendation letter to any academic or works institutions globally</div>
+            <div className="leading-relaxed md:text-sm text-xs">Every completing student will be entitled to a recommendation letter to any academic or work institutions globally</div>
             <NavLink to="/prize" className="uppercase border rounded-sm py-3 lg:w-1/2 text-center font-EB text-xs">Read More</NavLink>
           </div>
         </div>

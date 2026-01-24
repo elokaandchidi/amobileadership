@@ -56,7 +56,7 @@ body {
 .banner2-home {
     background-image: url('./assets/images/banner-home2.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-clip: initial;
     /* background-blend-mode: saturation; */
 }
