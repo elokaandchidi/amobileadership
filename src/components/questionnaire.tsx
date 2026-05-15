@@ -113,6 +113,10 @@ export default function QuestionnariesForm({closeModal} : {closeModal?: (value: 
             />
           </div>
           
+          <p className="mt-1 px-6 text-[.7rem] text-red-600 italic">
+            Please watch this video and reflect on Apple CEO - Tim Cook's response to the question he is asked.  He mentions "North star" in his response; if you do not know what this means, do research on this, to understand how it applies to career plans.
+          </p>
+
           <div className="text-lg font-EB font-bold my-4 px-6 leading-tight">
             The Squire 1st Edition - Career Development competition - Selection Questionnaire
           </div>
