@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.6",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^6.28.3",
     "@sanity/image-url": "^1.1.0",

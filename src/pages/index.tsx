@@ -38,6 +38,7 @@ import schoolsImg from "../assets/images/home-school.webp"
 import libraryImg from "../assets/images/home-library.png"
 import { NavLink, useLocation } from "react-router-dom";
 import DonationForm from "../components/donationForm";
+import QuestionnariesForm from "../components/questionnaire";
 
 
 
@@ -45,6 +46,7 @@ const Home = () => {
   const location = useLocation();
   const [newsList, setNewsList] = useState<NewInfo[]>([]);
   const [showDonateModal, setShowDonateModal] = useState(false);
+  const [showQuestionnaireModal, setShowQuestionnaireModal] = useState(false);
 
   const [winnerList, setWinnerList] = useState<PrizeWinnerInfo[]>([]);
   
@@ -91,8 +93,12 @@ const Home = () => {
     },
   }
 
-  const handleCloseModal = (value: boolean) => {
-    setShowDonateModal(value);
+  const handleCloseModal = (value: boolean, modalName: string) => {
+    if (modalName === 'donate') {
+      setShowDonateModal(value);
+    } else if (modalName === 'questionnaire') {
+      setShowQuestionnaireModal(value);
+    }
   };
 
   useEffect(() => {
@@ -126,17 +132,21 @@ const Home = () => {
 
   return (
     <div className='flex flex-col items-center md:gap-[5rem] gap-10 w-full'>
-      {showDonateModal && <DonationForm closeModal={(value) => handleCloseModal(value)}/>}
+      {showDonateModal && <DonationForm closeModal={(value) => handleCloseModal(value, 'donate')}/>}
+      {showQuestionnaireModal && <QuestionnariesForm closeModal={(value) => handleCloseModal(value, 'questionnaire')}/>}
       <div className='banner-home bg-cover bg-center flex flex-col items-center w-full'>
         <div className='w-full flex flex-col justify-center items-center bg-[#1f223d]/84 lg:py-[15rem] py-[8rem] h-full'>
           <div className='flex flex-col lg:gap-10 gap-8 w-11/12 lg:w-11/12 xl:w-8/12 items-center text-white'>
             <div className="font-EB text-center leading-12 text-[2.6rem] lg:text-[3rem] font-semibold">Empower Minds, <br className="lg:hidden inline-flex"/> Ignite Change: <br/> Fuel Education</div>
             <div className="font-nunito text-center lg:w-1/2">We are a charity organization dedicated to driving education, academic excellence, entrepreneurship and workplace skills through our impactful essay competition program. Join us today!</div>
-            <div className="flex flex-row gap-5 justify-center items-center font-EB font-medium">
+            <div className="flex flex-row lg:flex-nowrap flex-wrap gap-5 justify-center items-center font-EB font-medium">
               <NavLink to="/enrol" className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80">
                 ENROL
               </NavLink>
-              <div onClick={() => setShowDonateModal(true)} className="p-3 px-5 rounded-sm text-center text-[#1f223d] bg-white cursor-pointer">
+              <div onClick={() => setShowQuestionnaireModal(true)} className="p-3 px-5 rounded-sm text-center text-[#1f223d] bg-white cursor-pointer">
+                THE SQUIRE
+              </div>
+              <div onClick={() => setShowDonateModal(true)} className="p-3 px-5 rounded-sm text-center bg-[#b8935c]/80 cursor-pointer">
                 DONATE
               </div>
             </div>

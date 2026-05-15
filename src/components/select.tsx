@@ -67,8 +67,8 @@ const SelectField: React.FC<SelectProps> = ({
   };
 
   return (
-    <div ref={componentRef} className={`${className} flex flex-col relative`}>
-      {title && <div className="pb-1 text-sm font-bold tracking-wide">{title}</div>}
+    <div ref={componentRef} className={`${className} flex flex-col text-xs relative font-nunito`}>
+      {title && <div className="pb-1 font-bold tracking-wide">{title}</div>}
 
       {show && !disabled && (
         <div className="flex flex-col gap-1 bg-white shadow-2xl border border-gray-200 w-full h-auto rounded-lg overflow-auto absolute bottom-[4.5rem] z-10">
