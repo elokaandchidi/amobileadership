@@ -141,7 +141,7 @@ export default function QuestionnariesForm({closeModal} : {closeModal?: (value: 
           <div className="w-10/12 flex flex-col relative py-10 text-sm">
             <div className="flex flex-row items-center justify-center gap-2 pb-5 w-full">
               <img src={logo} alt='logo' className='h-16 pl-2'/>
-              <span className="text-lg font-bold font-EB">Fill the form below</span>
+              <span className="text-lg font-bold font-EB leading-tight">Please complete the form below for The Squire Selection Panel to review.</span>
             </div>
             <div className="flex flex-col gap-5 w-full">
               <div className="grid lg:grid-cols-2 gap-4">
